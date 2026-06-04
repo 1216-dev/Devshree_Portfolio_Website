@@ -85,7 +85,7 @@ function FloatingShape({ color, size, top, left, delay, shape }: FloatingShapePr
 
 export function ScrollShapes() {
   return (
-    <div className="pointer-events-none fixed inset-0 z-30 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 z-30 hidden overflow-hidden md:block">
       {shapes.map((shape, i) => (
         <FloatingShape key={i} {...shape} />
       ))}
