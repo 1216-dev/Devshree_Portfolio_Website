@@ -278,7 +278,7 @@ export function HeroPage() {
               initial={{ opacity: 0, y: 10, rotate: -5 }}
               animate={{ opacity: 1, y: 0, rotate: -2 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="absolute -top-16 left-2 font-script text-3xl text-neutral-300 whitespace-nowrap"
+              className="absolute -top-10 sm:-top-16 left-2 font-script text-2xl sm:text-3xl text-neutral-300 whitespace-nowrap"
             >
               Hi, I&apos;m{' '}
               <span className="relative inline-block px-2">
@@ -307,7 +307,7 @@ export function HeroPage() {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: [0, 1.2, 1] }}
               transition={{ delay: 1.6, duration: 0.8, ease: 'easeOut' }}
-              className="absolute -left-16 -top-12 z-20 flex flex-col items-center text-[#e8b923] drop-shadow-[0_2px_8px_rgba(232,185,35,0.4)]"
+              className="absolute -left-6 sm:-left-16 -top-6 sm:-top-12 z-20 flex flex-col items-center text-[#e8b923] drop-shadow-[0_2px_8px_rgba(232,185,35,0.4)] scale-75 sm:scale-100 origin-bottom-right"
             >
               <svg
                 width="64"
@@ -350,15 +350,15 @@ export function HeroPage() {
                   clipPath: 'polygon(0% 15%, 5% 0%, 95% 4%, 100% 20%, 98% 85%, 92% 100%, 8% 96%, 0% 80%)'
                 }}
               />
-              <div className="bg-white p-3 pb-20 shadow-2xl">
+              <div className="bg-white p-3 pb-16 sm:pb-20 shadow-2xl">
                 <Image
                   src="/images/portrait-lobby.png"
                   alt="Polaroid portrait of Devshree Jadeja"
                   width={384}
                   height={384}
-                  className="h-80 w-80 object-cover sm:h-96 sm:w-96"
+                  className="h-64 w-64 object-cover sm:h-80 sm:w-80 md:h-96 md:w-96"
                 />
-                <p className="absolute bottom-4 left-1/2 -translate-x-1/2 font-script text-3xl text-neutral-700">
+                <p className="absolute bottom-4 left-1/2 -translate-x-1/2 font-script text-2xl sm:text-3xl text-neutral-700 whitespace-nowrap">
                   me, debugging :)
                 </p>
               </div>
