@@ -43,7 +43,7 @@ function RansomWord({ word, start = 0 }: { word: string; start?: number }) {
 
 const CONTACTS = [
   { label: 'Email', value: 'devshreehjadeja@gmail.com', href: 'mailto:devshreehjadeja@gmail.com' },
-  { label: 'Phone', value: '+1 934-263-1865', href: 'tel:+19342631865' },
+  { label: 'Phone', value: '+1 934-221-7600', href: 'tel:+19342217600' },
   { label: 'Location', value: 'Stony Brook, NY', href: undefined },
 ]
 
