@@ -4,9 +4,9 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const TODOS = [
+  'Open to full-time opportunities',
+  'Attending tech events in SF',
   'Ship FinSense real-time engine',
-  'Submit satellite-image paper',
-  'Polish portfolio case studies',
   'Prep for ML system interviews',
 ]
 
@@ -235,7 +235,7 @@ export function AboutPage() {
               </motion.div>
               <p className="font-mono text-[10px] text-neutral-500 uppercase tracking-wider">based in</p>
               <p className="font-display text-2xl tracking-wide text-[#3f6b2e] mt-1">
-                STONY BROOK, NY
+                SAN FRANCISCO, CA
               </p>
               <p className="mt-1 font-script text-xl text-neutral-600">
                 from Gujarat, India

@@ -44,7 +44,7 @@ function RansomWord({ word, start = 0 }: { word: string; start?: number }) {
 const CONTACTS = [
   { label: 'Email', value: 'devshreehjadeja@gmail.com', href: 'mailto:devshreehjadeja@gmail.com' },
   { label: 'Phone', value: '+1 934-221-7600', href: 'tel:+19342217600' },
-  { label: 'Location', value: 'Stony Brook, NY', href: undefined },
+  { label: 'Location', value: 'San Francisco, CA', href: undefined },
 ]
 
 export function ContactPage() {
@@ -68,9 +68,8 @@ export function ContactPage() {
               recommendation engines.
             </p>
             <p className="mt-6 text-base leading-relaxed text-white/80">
-              Ready to turn your messy data into clear decisions? Whether
-              it&apos;s an ML model, a research problem, or a product that needs
-              real insight — let&apos;s build it, fast and accurate.
+              I am currently based in San Francisco, actively attending tech events, and open to full-time opportunities.
+              Whether it&apos;s an ML model, a research problem, or a product that needs real insight — let&apos;s build it, fast and accurate.
             </p>
           </motion.div>
 
