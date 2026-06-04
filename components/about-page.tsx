@@ -67,12 +67,12 @@ export function AboutPage() {
         >
           {/* to do list */}
           <motion.div variants={itemVariants}>
-            <p className="mb-3 font-script text-3xl">My current to-do list</p>
+            <p className="mb-3 font-script text-2xl text-neutral-700">My current to-do list</p>
             <motion.div
               whileHover={{ rotate: 0 }}
-              className="rotate-[-1.5deg] rounded-xl border-l-8 border-[#e8772b] bg-[#fffdf7] p-7 shadow-md"
+              className="rotate-[-1.5deg] rounded-xl border-l-8 border-[#e8772b] bg-[#fffdf7] p-5 shadow-sm"
             >
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-3">
                 {TODOS.map((t, i) => (
                   <motion.li
                     key={t}
@@ -80,7 +80,7 @@ export function AboutPage() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-3 font-script text-2xl leading-tight"
+                    className="flex items-start gap-3 font-script text-xl leading-tight text-neutral-800"
                   >
                     <motion.span
                       whileHover={{ scale: 1.2 }}
@@ -97,29 +97,29 @@ export function AboutPage() {
 
           {/* finder window */}
           <motion.div variants={itemVariants}>
-            <p className="mb-3 font-script text-3xl">What do I work on?</p>
+            <p className="mb-3 font-script text-2xl text-neutral-700">What do I work on?</p>
             <motion.div
               whileHover={{ rotate: 0 }}
-              className="rotate-[1deg] rounded-xl border border-black/10 bg-white shadow-md overflow-hidden"
+              className="rotate-[1deg] rounded-xl border border-black/10 bg-white shadow-sm overflow-hidden"
             >
-              <div className="flex items-center gap-2 border-b border-black/10 px-4 py-3 bg-neutral-50/50">
+              <div className="flex items-center gap-2 border-b border-black/10 px-4 py-2 bg-neutral-50/50">
                 <motion.span
                   whileHover={{ scale: 1.5 }}
-                  className="h-3 w-3 rounded-full bg-[#d9482b]"
+                  className="h-2.5 w-2.5 rounded-full bg-[#d9482b]"
                 />
                 <motion.span
                   whileHover={{ scale: 1.5 }}
-                  className="h-3 w-3 rounded-full bg-[#e8b923]"
+                  className="h-2.5 w-2.5 rounded-full bg-[#e8b923]"
                 />
                 <motion.span
                   whileHover={{ scale: 1.5 }}
-                  className="h-3 w-3 rounded-full bg-[#3f6b2e]"
+                  className="h-2.5 w-2.5 rounded-full bg-[#3f6b2e]"
                 />
-                <span className="ml-2 font-mono text-xs text-neutral-500">
+                <span className="ml-2 font-mono text-[10px] text-neutral-500">
                   devshree&apos;s work
                 </span>
               </div>
-              <div className="grid grid-cols-3 gap-5 p-6">
+              <div className="grid grid-cols-3 gap-4 p-5">
                 {FOLDERS.map((f, i) => (
                   <motion.div
                     key={f}
@@ -128,15 +128,15 @@ export function AboutPage() {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     whileHover={{ scale: 1.1, y: -5 }}
-                    className="flex cursor-pointer flex-col items-center gap-2 text-center"
+                    className="flex cursor-pointer flex-col items-center gap-1.5 text-center"
                   >
-                    <svg viewBox="0 0 48 40" className="h-12 w-14" aria-hidden="true">
+                    <svg viewBox="0 0 48 40" className="h-10 w-12" aria-hidden="true">
                       <path
                         d="M2 8a4 4 0 014-4h12l4 5h18a4 4 0 014 4v21a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"
                         fill="#3b9ed9"
                       />
                     </svg>
-                    <span className="whitespace-pre-line font-mono text-[11px] leading-tight text-neutral-600 font-medium">
+                    <span className="whitespace-pre-line font-mono text-[10px] leading-tight text-neutral-600 font-medium">
                       {f}
                     </span>
                   </motion.div>
@@ -157,28 +157,28 @@ export function AboutPage() {
           <div className="h-12 w-8 rounded-t-md bg-neutral-400" />
           <motion.div
             whileHover={{ scale: 1.02, rotate: 0 }}
-            className="w-full max-w-[380px] rotate-[-1deg] rounded-[2rem] bg-[#9a948a] p-5 shadow-2xl"
+            className="w-full max-w-[300px] mx-auto rotate-[-1deg] rounded-[2rem] bg-[#9a948a] p-4 shadow-xl"
           >
-            <div className="mx-auto mb-4 h-2 w-16 rounded-full bg-black/30" />
-            <div className="overflow-hidden rounded-2xl">
+            <div className="mx-auto mb-3 h-2 w-12 rounded-full bg-black/30" />
+            <div className="overflow-hidden rounded-xl">
               <Image
                 src="/images/technovisors.png"
                 alt="Professional photo at Technovisors"
-                width={450}
-                height={550}
-                className="h-96 sm:h-[480px] w-full object-cover"
+                width={400}
+                height={500}
+                className="h-72 sm:h-80 w-full object-cover"
               />
             </div>
-            <div className="mt-4 rounded-2xl bg-[#fffdf7] py-6 text-center shadow-inner">
+            <div className="mt-3 rounded-xl bg-[#fffdf7] py-4 text-center shadow-inner">
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="font-script text-6xl text-[#e8772b] font-bold"
+                className="font-script text-5xl text-[#e8772b] font-bold"
               >
                 Devshree
               </motion.p>
-              <p className="mt-2 font-mono text-sm tracking-[0.25em] text-neutral-600 font-bold">
+              <p className="mt-1 font-mono text-[11px] tracking-[0.25em] text-neutral-600 font-bold">
                 DATA SCIENTIST
               </p>
             </div>
@@ -187,7 +187,7 @@ export function AboutPage() {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 rounded-lg border-2 border-[#e8772b] px-8 py-3.5 font-mono text-sm tracking-widest text-[#e8772b] transition-colors hover:bg-[#e8772b] hover:text-white font-bold"
+            className="mt-6 rounded-lg border-2 border-[#e8772b] px-6 py-2.5 font-mono text-xs tracking-widest text-[#e8772b] transition-colors hover:bg-[#e8772b] hover:text-white font-bold"
           >
             DOWNLOAD RESUME ↓
           </motion.a>
@@ -203,21 +203,21 @@ export function AboutPage() {
         >
           {/* stamp */}
           <motion.div variants={itemVariants}>
-            <p className="mb-3 font-script text-3xl">Where am I from?</p>
+            <p className="mb-3 font-script text-2xl text-neutral-700">Where am I from?</p>
             <motion.div
               whileHover={{ rotate: 0, scale: 1.02 }}
-              className="rotate-[2deg] border-[8px] border-dashed border-[#3f6b2e] bg-[#eef3e8] p-7 shadow-md"
+              className="rotate-[2deg] border-[6px] border-dashed border-[#3f6b2e] bg-[#eef3e8] p-5 shadow-sm"
             >
-              <div className="flex items-center justify-between font-mono text-xs text-neutral-600 font-semibold mb-2">
+              <div className="flex items-center justify-between font-mono text-[10px] text-neutral-600 font-semibold mb-1">
                 <span>Jun 3</span>
                 <span>11:54:26</span>
               </div>
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="my-5 flex justify-center"
+                className="my-4 flex justify-center"
               >
-                <svg viewBox="0 0 48 48" className="h-16 w-16" aria-hidden="true">
+                <svg viewBox="0 0 48 48" className="h-12 w-12" aria-hidden="true">
                   <circle
                     cx="24"
                     cy="24"
@@ -233,11 +233,11 @@ export function AboutPage() {
                   />
                 </svg>
               </motion.div>
-              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider">based in</p>
-              <p className="font-display text-3xl tracking-wide text-[#3f6b2e] mt-1">
+              <p className="font-mono text-[10px] text-neutral-500 uppercase tracking-wider">based in</p>
+              <p className="font-display text-2xl tracking-wide text-[#3f6b2e] mt-1">
                 STONY BROOK, NY
               </p>
-              <p className="mt-2 font-script text-2xl text-neutral-600">
+              <p className="mt-1 font-script text-xl text-neutral-600">
                 from Gujarat, India
               </p>
             </motion.div>
@@ -245,21 +245,21 @@ export function AboutPage() {
 
           {/* since when */}
           <motion.div variants={itemVariants}>
-            <p className="mb-3 font-script text-3xl">Since when?</p>
+            <p className="mb-3 font-script text-2xl text-neutral-700">Since when?</p>
             <motion.div
               whileHover={{ rotate: 0 }}
-              className="relative rotate-[-1deg] rounded-xl bg-[#fffdf7] p-7 shadow-md"
+              className="relative rotate-[-1deg] rounded-xl bg-[#fffdf7] p-5 shadow-sm"
             >
-              <span className="absolute -top-3 right-6 h-6 w-3 rounded-full border-2 border-neutral-400" />
+              <span className="absolute -top-2 right-4 h-5 w-2.5 rounded-full border-2 border-neutral-400" />
               <motion.p
                 initial={{ scale: 0.5 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                className="font-script text-5xl text-[#e8772b] font-bold"
+                className="font-script text-4xl text-[#e8772b] font-bold"
               >
                 1+ Years
               </motion.p>
-              <p className="mt-3 text-base leading-relaxed text-neutral-700">
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700">
                 Hands-on ML & data science across research, fintech, and
                 satellite imaging — building scalable, accurate, impactful data
                 products.
