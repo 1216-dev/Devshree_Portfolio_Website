@@ -13,16 +13,16 @@ interface FloatingShapeProps {
 }
 
 const shapes: FloatingShapeProps[] = [
-  { color: '#d9482b', size: 40, top: '10%', left: '5%', delay: 0, shape: 'circle' },
-  { color: '#2b5fd9', size: 50, top: '20%', left: '90%', delay: 0.5, shape: 'square' },
-  { color: '#e8b923', size: 35, top: '40%', left: '3%', delay: 1, shape: 'triangle' },
-  { color: '#3f6b2e', size: 45, top: '60%', left: '95%', delay: 1.5, shape: 'circle' },
-  { color: '#e8772b', size: 55, top: '80%', left: '8%', delay: 2, shape: 'square' },
-  { color: '#d9482b', size: 30, top: '15%', left: '92%', delay: 0.3, shape: 'triangle' },
-  { color: '#2b5fd9', size: 38, top: '45%', left: '2%', delay: 0.8, shape: 'circle' },
-  { color: '#e8b923', size: 42, top: '70%', left: '93%', delay: 1.3, shape: 'square' },
-  { color: '#3f6b2e', size: 48, top: '85%', left: '6%', delay: 1.8, shape: 'triangle' },
-  { color: '#e8772b', size: 36, top: '30%', left: '96%', delay: 0.6, shape: 'circle' },
+  { color: '#d9482b', size: 20, top: '10%', left: '5%', delay: 0, shape: 'circle' },
+  { color: '#2b5fd9', size: 25, top: '20%', left: '90%', delay: 0.5, shape: 'square' },
+  { color: '#e8b923', size: 18, top: '40%', left: '3%', delay: 1, shape: 'triangle' },
+  { color: '#3f6b2e', size: 22, top: '60%', left: '95%', delay: 1.5, shape: 'circle' },
+  { color: '#e8772b', size: 28, top: '80%', left: '8%', delay: 2, shape: 'square' },
+  { color: '#d9482b', size: 15, top: '15%', left: '92%', delay: 0.3, shape: 'triangle' },
+  { color: '#2b5fd9', size: 19, top: '45%', left: '2%', delay: 0.8, shape: 'circle' },
+  { color: '#e8b923', size: 21, top: '70%', left: '93%', delay: 1.3, shape: 'square' },
+  { color: '#3f6b2e', size: 24, top: '85%', left: '6%', delay: 1.8, shape: 'triangle' },
+  { color: '#e8772b', size: 18, top: '30%', left: '96%', delay: 0.6, shape: 'circle' },
 ]
 
 function FloatingShape({ color, size, top, left, delay, shape }: FloatingShapeProps) {
