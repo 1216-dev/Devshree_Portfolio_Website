@@ -21,28 +21,31 @@ export function PhotoTimeline() {
 
   const TIMELINE_PHOTOS = [
     {
-      src: '/images/hack-rare-team.png',
-      alt: 'Hack Rare team',
-      title: 'Hack Rare Hackathon',
-      date: 'June 2024',
+      src: '/images/av-clc.jpg',
+      alt: 'Working as AV Tech Lead with CLC',
+      title: 'AV Tech Lead with CLC',
+      date: '2023 - 2024',
       rotate: -3,
-      note: 'Collab and coding with an amazing team!'
+      note: 'Running tech & AV operations for Student Affairs CLC events!',
+      sticker: '🎧'
     },
     {
-      src: '/images/av-job.png',
-      alt: 'Stony Brook Student Affairs AV Job',
-      title: 'On-Campus AV Tech Lead',
-      date: 'Student Affairs events',
+      src: '/images/graduation-sbu.jpg',
+      alt: 'Getting graduated from Stony Brook University',
+      title: 'SBU Graduation',
+      date: 'May 2024',
       rotate: 2,
-      note: 'Running AV for key university summits.'
+      note: 'Earned my M.S. in Computer Science! Class of 24!',
+      sticker: '🎓'
     },
     {
-      src: '/images/graduation.png',
-      alt: 'Stony Brook Graduation Ceremony',
-      title: 'My Graduation',
-      date: 'Class of 2024',
+      src: '/images/rippling.png',
+      alt: 'Working at Rippling',
+      title: 'Software Engineer at Rippling',
+      date: 'Present',
       rotate: -2,
-      note: 'Class of 24, throwing the cap!'
+      note: 'Building world-class workforce management products at Rippling!',
+      sticker: '💻'
     }
   ]
 
@@ -111,8 +114,40 @@ export function PhotoTimeline() {
                 transition={{ duration: 0.6, delay: i * 0.2 }}
                 whileHover={{ scale: 1.03, rotate: 0, zIndex: 10 }}
                 style={{ rotate: photo.rotate }}
-                className="bg-white p-4 shadow-xl border border-neutral-200/80 rounded-sm w-full max-w-[320px] flex-shrink-0"
+                className="bg-white p-4 shadow-xl border border-neutral-200/80 rounded-sm w-full max-w-[320px] flex-shrink-0 relative"
               >
+                {/* Silver Metal U-Pin Paperclip stuck at the top */}
+                <div className="absolute -top-3 left-[15%] w-5 h-8 z-30 drop-shadow-md transform -rotate-12 pointer-events-none">
+                  <div className="w-2.5 h-7 border-[2px] border-neutral-400 rounded-full bg-neutral-200/80 opacity-95 relative">
+                    <div className="absolute inset-x-0.5 top-1.5 bottom-1.5 border-[1px] border-neutral-500 rounded-full" />
+                  </div>
+                </div>
+
+                {/* Tape Sticker on the first and last card for scrapbooking */}
+                {i !== 1 && (
+                  <div className="absolute -top-2 right-[20%] w-12 h-4 bg-yellow-200/30 backdrop-blur-[0.5px] border border-yellow-300/25 rotate-[6deg] z-20 shadow-xs" />
+                )}
+
+                {/* Graduation Cap Emoji Sticker on Card 2 */}
+                {i === 1 && (
+                  <div className="absolute -top-5 right-2 w-10 h-10 z-30 drop-shadow-md transform rotate-[15deg] select-none text-2xl flex items-center justify-center bg-amber-50 rounded-full border border-amber-950/20">
+                    🎓
+                  </div>
+                )}
+
+                {/* Custom User Sticker Asset from Image 4 */}
+                {i === 1 && (
+                  <div className="absolute -bottom-3 -right-3 w-10 h-10 z-30 drop-shadow-md transform rotate-[-8deg] select-none pointer-events-none">
+                    <Image 
+                      src="/images/timeline-stickers.png" 
+                      alt="sticker" 
+                      width={40} 
+                      height={40} 
+                      className="object-contain"
+                    />
+                  </div>
+                )}
+
                 {/* Sketched Film strip sprockets container (looks like photo slot) */}
                 <div className="flex justify-between gap-1 mb-2 bg-neutral-900 px-2 py-1.5 rounded-sm">
                   {Array.from({ length: 10 }).map((_, idx) => (
@@ -158,3 +193,4 @@ export function PhotoTimeline() {
     </div>
   )
 }
+
