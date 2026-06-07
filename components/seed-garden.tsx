@@ -191,6 +191,23 @@ const WateringCanIcon = ({ animate }: { animate?: boolean }) => (
   </motion.svg>
 )
 
+// Natural plant logo for the floating widget
+const NaturalPlantLogo = () => (
+  <svg className="w-16 h-16" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Stem */}
+    <path d="M24 44V22C24 16 26 12 30 10" stroke="#15803d" strokeWidth="4.5" strokeLinecap="round" />
+    <path d="M24 32V24C24 20 22 18 18 16" stroke="#16a34a" strokeWidth="3.5" strokeLinecap="round" />
+    {/* Center Sprout Leaf */}
+    <path d="M24 22C24 14 28 8 28 8C28 8 32 14 28 22C24 30 24 22 24 22Z" fill="#22c55e" stroke="#15803d" strokeWidth="2" />
+    {/* Left Leaf */}
+    <path d="M18 16C12 16 6 10 6 10C6 10 12 6 18 16Z" fill="#4ade80" stroke="#16a34a" strokeWidth="2" />
+    {/* Right Leaf */}
+    <path d="M30 10C36 10 42 16 42 16C42 16 36 20 30 10Z" fill="#166534" stroke="#14532d" strokeWidth="2" />
+    {/* Highlights */}
+    <path d="M26 12C27 10 28 9 28 9" stroke="#bbf7d0" strokeWidth="2.5" strokeLinecap="round" />
+  </svg>
+)
+
 export function SeedGarden() {
   const [isOpen, setIsOpen] = useState(false)
   const [seeds, setSeeds] = useState<SeedIdea[]>([])
@@ -462,15 +479,29 @@ export function SeedGarden() {
                 }}
                 className="group relative cursor-pointer flex flex-col items-center justify-end h-full w-full pb-1"
               >
-                {/* Plant indicator / hover notes */}
-                <div className="absolute bottom-12 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
-                  <div className="bg-amber-950 text-amber-50 px-3 py-2 rounded-xl text-xs shadow-2xl border border-amber-800 max-w-[200px] text-center font-mono">
-                    <span className="font-bold text-amber-300 block mb-0.5">{plant.name}</span>
-                    <p className="leading-snug">{plant.note}</p>
-                    <span className="text-[10px] text-amber-400 block mt-1">💧 Watered {plant.waterCount} times</span>
+                {/* Plant indicator / hover notes (visible only when NOT in watering mode) */}
+                {!wateringMode && (
+                  <div className="absolute bottom-12 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
+                    <div className="bg-amber-950 text-amber-50 px-3 py-2 rounded-xl text-xs shadow-2xl border border-amber-800 max-w-[200px] text-center font-mono">
+                      <span className="font-bold text-amber-300 block mb-0.5">{plant.name}</span>
+                      <p className="leading-snug">{plant.note}</p>
+                      <span className="text-[10px] text-amber-400 block mt-1">💧 Watered {plant.waterCount} times</span>
+                    </div>
+                    <div className="w-2.5 h-2.5 bg-amber-950 rotate-45 -mt-1.5 border-r border-b border-amber-800" />
                   </div>
-                  <div className="w-2.5 h-2.5 bg-amber-950 rotate-45 -mt-1.5 border-r border-b border-amber-800" />
-                </div>
+                )}
+
+                {/* Watering Target Indicator with Arrow (visible only in watering mode on hover) */}
+                {wateringMode && (
+                  <div className="absolute bottom-14 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
+                    <div className="flex flex-col items-center animate-bounce">
+                      <div className="rotate-[-25deg] filter drop-shadow-md">
+                        <WateringCanIcon animate={true} />
+                      </div>
+                      <span className="text-xl text-blue-400 font-bold -mt-3 select-none">⬇️</span>
+                    </div>
+                  </div>
+                )}
 
                 {/* Show Stage Icon */}
                 <div className="relative">
@@ -535,9 +566,9 @@ export function SeedGarden() {
           className="relative flex flex-col items-center justify-center p-3 rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-amber-200 hover:border-amber-400 group cursor-pointer"
         >
           {/* Sprout visual and soil */}
-          <div className="scale-90 flex flex-col items-center">
-            <SproutIcon />
-            <div className="-mt-3">
+          <div className="scale-110 flex flex-col items-center">
+            <NaturalPlantLogo />
+            <div className="-mt-5">
               <SoilIcon />
             </div>
           </div>
