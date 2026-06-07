@@ -741,6 +741,14 @@ export function SeedGarden() {
 
               {/* Scrollable Soil Board Area */}
               <div className="flex-1 overflow-auto bg-[#854d0e] p-6 relative min-h-[400px]">
+                {/* Sticky guide prompting to click the soil to plant */}
+                {!wateringMode && (
+                  <div className="sticky top-0 left-1/2 -translate-x-1/2 z-35 w-fit mx-auto mb-4 bg-amber-50 border-2 border-amber-950 px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 pointer-events-none font-mono text-[10px] font-bold text-amber-950 tracking-wide select-none animate-bounce">
+                    <span>🌱</span>
+                    <span>Click anywhere on the soil below to find a spot for planting!</span>
+                  </div>
+                )}
+
                 {/* Horizontal Garden Rows Texture */}
                 <div className="absolute inset-0 pointer-events-none flex flex-col justify-between py-3 opacity-30">
                   {Array.from({ length: 9 }).map((_, i) => (
