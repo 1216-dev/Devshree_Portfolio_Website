@@ -213,7 +213,7 @@ export function SeedGarden() {
   const [seeds, setSeeds] = useState<SeedIdea[]>([])
   const [soundEnabled, setSoundEnabled] = useState(true)
   const [wateringMode, setWateringMode] = useState(false)
-  const [waterLimit, setWaterLimit] = useState(1) // 1 per day
+  const [waterLimit, setWaterLimit] = useState(2) // 2 per day
   const [showInfo, setShowInfo] = useState(false)
   
   // Custom dialog to plant a seed
@@ -328,7 +328,10 @@ export function SeedGarden() {
     const lastWateredDate = localStorage.getItem('land_of_ideas_last_watered')
     const today = new Date().toDateString()
     if (lastWateredDate === today) {
-      setWaterLimit(0)
+      const count = parseInt(localStorage.getItem('land_of_ideas_water_count_today') || '0', 10)
+      setWaterLimit(Math.max(0, 2 - count))
+    } else {
+      setWaterLimit(2)
     }
   }, [])
 
@@ -381,7 +384,7 @@ export function SeedGarden() {
     if (!wateringMode) return
 
     if (waterLimit <= 0) {
-      triggerToast('You have already used your watering can today! Come back tomorrow.')
+      triggerToast('You have already used your watering can twice today! Come back tomorrow.')
       setWateringMode(false)
       return
     }
@@ -435,8 +438,11 @@ export function SeedGarden() {
     localStorage.setItem('land_of_ideas_seeds', JSON.stringify(updated))
     
     // Set daily limit
-    setWaterLimit(0)
-    localStorage.setItem('land_of_ideas_last_watered', new Date().toDateString())
+    const newLimit = waterLimit - 1
+    setWaterLimit(newLimit)
+    const today = new Date().toDateString()
+    localStorage.setItem('land_of_ideas_last_watered', today)
+    localStorage.setItem('land_of_ideas_water_count_today', String(2 - newLimit))
     setWateringMode(false)
     triggerToast(`Watered ${plant.name}'s sprout! Stage: ${newStage.toUpperCase()} (${newWaterCount} drops total)`)
   }
@@ -720,7 +726,7 @@ export function SeedGarden() {
                         Daily Water
                       </span>
                       <span className="text-sm font-bold block leading-none">
-                        {waterLimit}/1 CAN
+                        {waterLimit}/2 CAN
                       </span>
                     </div>
                   </button>
@@ -792,7 +798,7 @@ export function SeedGarden() {
                         <h4 className="font-bold text-amber-200 mb-2 border-b border-amber-900/60 pb-1">NOTE</h4>
                         <ul className="list-disc list-inside space-y-2">
                           <li>Every sprout is a surprise flower; it will evolve dynamically as it accumulates water drops. You will only find out what it is once it fully blooms!</li>
-                          <li>To keep the garden fair and healthy, you can only plant one sprout and water one other sprout a day.</li>
+                          <li>To keep the garden fair and healthy, you can only plant one sprout and water up to two other sprouts a day.</li>
                         </ul>
                       </div>
                     </div>
