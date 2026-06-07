@@ -11,12 +11,14 @@ import { ScrapbookNav } from '@/components/scrapbook-nav'
 import { ScrollShapes } from '@/components/scroll-shapes'
 import { SeedGarden } from '@/components/seed-garden'
 import { LoadingScreen } from '@/components/loading-screen'
+import { CustomCursor } from '@/components/custom-cursor'
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
     <main className="relative">
+      <CustomCursor />
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
       <ScrollShapes />
       <ScrapbookNav />

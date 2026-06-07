@@ -128,8 +128,19 @@ export function HeroPage() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
             className="cursor-pointer hover:text-white"
+            data-cursor-tip="yes click it! 📄"
           >
             Resume
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/devshree-jadeja-144709210/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer hover:text-white"
+            data-cursor-tip="yes connect! 🤝"
+          >
+            LinkedIn
           </motion.a>
           <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Contact</motion.span>
         </div>

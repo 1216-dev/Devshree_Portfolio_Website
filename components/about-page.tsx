@@ -50,7 +50,7 @@ export function AboutPage() {
         </span>
         <div className="hidden gap-8 font-script text-2xl text-[#2b2620] sm:flex">
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Work</span>
-          <a href="/ML_Devshree_Resume_.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#e8772b] transition-colors">Resume</a>
+          <a href="/ML_Devshree_Resume_.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#e8772b] transition-colors" data-cursor-tip="yes click it! 📄">Resume</a>
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">About</span>
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Contact</span>
         </div>
@@ -189,6 +189,7 @@ export function AboutPage() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            data-cursor-tip="yes click it! 📄"
             className="mt-6 rounded-lg border-2 border-[#e8772b] px-6 py-2.5 font-mono text-xs tracking-widest text-[#e8772b] transition-colors hover:bg-[#e8772b] hover:text-white font-bold"
           >
             DOWNLOAD RESUME ↓
@@ -263,7 +264,7 @@ export function AboutPage() {
               </motion.p>
               <p className="mt-2 text-sm leading-relaxed text-neutral-700">
                 Hands-on ML & data science across research, fintech, and
-                satellite imaging — building scalable, accurate, impactful data
+                satellite imaging, building scalable, accurate, impactful data
                 products.
               </p>
             </motion.div>

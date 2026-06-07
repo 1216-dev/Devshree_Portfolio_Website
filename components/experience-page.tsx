@@ -7,7 +7,7 @@ const EXPERIENCES = [
     org: 'ISRO',
     full: 'Indian Space Research Organisation',
     role: 'Research Intern',
-    date: 'Jan 2024 — Jun 2024',
+    date: 'Jan 2024 to Jun 2024',
     points: [
       'Developed an RNN with attention mechanisms reaching 92% accuracy in satellite image classification.',
       'Built a GAN-based model for high-resolution satellite image synthesis.',
@@ -18,7 +18,7 @@ const EXPERIENCES = [
     org: 'Digipple Technologies',
     full: 'Digipple Technologies',
     role: 'Data Science Intern',
-    date: 'Jun 2024 — Aug 2024',
+    date: 'Jun 2024 to Aug 2024',
     points: [
       'Improved dataset quality by 40% through automated annotation of 20,000+ research papers.',
       'Achieved 90% accuracy using SciBERT and BERT models for prediction tasks.',
@@ -29,7 +29,7 @@ const EXPERIENCES = [
     org: 'DigiWagon Technologies',
     full: 'DigiWagon Technologies',
     role: 'Data Science Intern',
-    date: 'May 2023 — Aug 2023',
+    date: 'May 2023 to Aug 2023',
     points: [
       'Built a data extraction system improving retrieval efficiency by 40%.',
       'Developed a web portal optimizing data organization by 30%.',
@@ -53,7 +53,7 @@ export function ExperiencePage() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600">
           I&apos;ve built intelligent solutions for research institutions and
-          companies — from automated research systems to complex AI models — with
+          companies, from automated research systems to complex AI models, with
           a focus on scalable, accurate, and impactful data products.
         </p>
       </motion.div>
@@ -68,7 +68,7 @@ export function ExperiencePage() {
       >
         <p className="text-pretty text-xl leading-relaxed sm:text-2xl">
           At some point I realised the model is never the hard part. The hard
-          part is the data — messy, missing, biased, human. Most of my work is
+          part is the data, messy, missing, biased, human. Most of my work is
           the patient business of turning that noise into something a person can
           actually act on.
         </p>
@@ -127,7 +127,7 @@ export function ExperiencePage() {
         viewport={{ once: true }}
         className="mx-auto mt-10 max-w-4xl border-t border-dashed border-neutral-300 pt-6 text-center text-[11px] uppercase tracking-[0.3em] text-neutral-400"
       >
-        the previous chapters of this notebook · 2023 — 2026
+        the previous chapters of this notebook · 2023 to 2026
       </motion.p>
     </div>
   )

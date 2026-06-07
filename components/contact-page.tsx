@@ -42,9 +42,9 @@ function RansomWord({ word, start = 0 }: { word: string; start?: number }) {
 }
 
 const CONTACTS = [
-  { label: 'Email', value: 'devshreehjadeja@gmail.com', href: 'mailto:devshreehjadeja@gmail.com' },
-  { label: 'Phone', value: '+1 934-221-7600', href: 'tel:+19342217600' },
-  { label: 'Location', value: 'San Francisco, CA', href: undefined },
+  { label: 'Email', value: 'devshreehjadeja@gmail.com', href: 'mailto:devshreehjadeja@gmail.com', tip: 'say hello! ✉️' },
+  { label: 'Phone', value: '+1 934-221-7600', href: 'tel:+19342217600', tip: 'call me! 📞' },
+  { label: 'LinkedIn', value: 'connect on linkedin', href: 'https://www.linkedin.com/in/devshree-jadeja-144709210/', tip: 'yes connect! 🤝' },
 ]
 
 export function ContactPage() {
@@ -63,13 +63,13 @@ export function ContactPage() {
             <p className="font-serif text-lg italic leading-relaxed text-white/90 sm:text-xl">
               A data scientist who&apos;s allergic to dashboards no one reads.
               I&apos;ve been turning numbers into stories since family
-              spreadsheets — from a B.Tech in CS to a Master&apos;s in Data
+              spreadsheets, from a B.Tech in CS to a Master&apos;s in Data
               Science, with detours through ISRO&apos;s satellites and fintech
               recommendation engines.
             </p>
             <p className="mt-6 text-base leading-relaxed text-white/80">
               I am currently based in San Francisco, actively attending tech events, and open to full-time opportunities.
-              Whether it&apos;s an ML model, a research problem, or a product that needs real insight — let&apos;s build it, fast and accurate.
+              Whether it&apos;s an ML model, a research problem, or a product that needs real insight, let&apos;s build it, fast and accurate.
             </p>
           </motion.div>
 
@@ -134,6 +134,7 @@ export function ContactPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ rotate: 0, scale: 1.05 }}
+                data-cursor-tip={c.tip}
                 className="rotate-[-1deg] rounded-lg bg-white p-5"
               >
                 {inner}
