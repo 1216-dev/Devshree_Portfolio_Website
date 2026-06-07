@@ -6,6 +6,7 @@ import { AboutPage } from '@/components/about-page'
 import { ExperiencePage } from '@/components/experience-page'
 import { ProjectsPage } from '@/components/projects-page'
 import { SkillsPage } from '@/components/skills-page'
+import { PhotoTimeline } from '@/components/photo-timeline'
 import { ContactPage } from '@/components/contact-page'
 import { ScrapbookNav } from '@/components/scrapbook-nav'
 import { ScrollShapes } from '@/components/scroll-shapes'
@@ -37,6 +38,9 @@ export default function Page() {
       </section>
       <section id="skills">
         <SkillsPage />
+      </section>
+      <section id="timeline">
+        <PhotoTimeline />
       </section>
       <section id="contact">
         <ContactPage />
