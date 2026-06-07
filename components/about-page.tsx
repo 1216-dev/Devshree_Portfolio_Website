@@ -50,7 +50,7 @@ export function AboutPage() {
         </span>
         <div className="hidden gap-8 font-script text-2xl text-[#2b2620] sm:flex">
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Work</span>
-          <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Resume</span>
+          <a href="/ML_Devshree_Resume_.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#e8772b] transition-colors">Resume</a>
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">About</span>
           <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Contact</span>
         </div>
@@ -184,7 +184,9 @@ export function AboutPage() {
             </div>
           </motion.div>
           <motion.a
-            href="#contact"
+            href="/ML_Devshree_Resume_.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="mt-6 rounded-lg border-2 border-[#e8772b] px-6 py-2.5 font-mono text-xs tracking-widest text-[#e8772b] transition-colors hover:bg-[#e8772b] hover:text-white font-bold"

@@ -122,7 +122,15 @@ export function HeroPage() {
         <div className="hidden gap-7 font-script text-xl text-neutral-400 sm:flex">
           <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer text-white">Works</motion.span>
           <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Research</motion.span>
-          <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Resume</motion.span>
+          <motion.a
+            href="/ML_Devshree_Resume_.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            className="cursor-pointer hover:text-white"
+          >
+            Resume
+          </motion.a>
           <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Contact</motion.span>
         </div>
       </motion.div>
