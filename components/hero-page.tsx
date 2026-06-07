@@ -120,8 +120,8 @@ export function HeroPage() {
       >
         <span className="font-script text-4xl font-bold leading-none text-white">dj</span>
         <div className="hidden gap-7 font-script text-xl text-neutral-400 sm:flex">
-          <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer text-white">Works</motion.span>
-          <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Research</motion.span>
+          <motion.span whileHover={{ scale: 1.1 }} data-cursor-tip="browse my builds! 🛠️" className="cursor-pointer text-white">Works</motion.span>
+          <motion.span whileHover={{ scale: 1.1 }} data-cursor-tip="peek my papers! 🛰️" className="cursor-pointer hover:text-white">Research</motion.span>
           <motion.a
             href="/ML_Devshree_Resume_.pdf"
             target="_blank"
@@ -142,7 +142,7 @@ export function HeroPage() {
           >
             LinkedIn
           </motion.a>
-          <motion.span whileHover={{ scale: 1.1 }} className="cursor-pointer hover:text-white">Contact</motion.span>
+          <motion.span whileHover={{ scale: 1.1 }} data-cursor-tip="let's talk! ✉️" className="cursor-pointer hover:text-white">Contact</motion.span>
         </div>
       </motion.div>
 
@@ -361,6 +361,7 @@ export function HeroPage() {
               animate={{ opacity: 1, scale: 1, rotate: 4 }}
               transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
               whileHover={{ scale: 1.05, rotate: 0 }}
+              data-cursor-tip="say cheese! 📸"
             >
               {/* Washitape on top-right with jagged edges */}
               <div 

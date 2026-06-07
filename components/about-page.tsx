@@ -49,10 +49,10 @@ export function AboutPage() {
           DJ
         </span>
         <div className="hidden gap-8 font-script text-2xl text-[#2b2620] sm:flex">
-          <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Work</span>
+          <span className="cursor-pointer hover:text-[#e8772b] transition-colors" data-cursor-tip="see what I built! 💻">Work</span>
           <a href="/ML_Devshree_Resume_.pdf" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-[#e8772b] transition-colors" data-cursor-tip="yes click it! 📄">Resume</a>
-          <span className="cursor-pointer hover:text-[#e8772b] transition-colors">About</span>
-          <span className="cursor-pointer hover:text-[#e8772b] transition-colors">Contact</span>
+          <span className="cursor-pointer hover:text-[#e8772b] transition-colors" data-cursor-tip="read my story! 📖">About</span>
+          <span className="cursor-pointer hover:text-[#e8772b] transition-colors" data-cursor-tip="say hello! ✉️">Contact</span>
         </div>
       </motion.div>
 
@@ -209,6 +209,7 @@ export function AboutPage() {
             <p className="mb-3 font-script text-2xl text-neutral-700">Where am I from?</p>
             <motion.div
               whileHover={{ rotate: 0, scale: 1.02 }}
+              data-cursor-tip="SF bay area! 🌉"
               className="rotate-[2deg] border-[6px] border-dashed border-[#3f6b2e] bg-[#eef3e8] p-5 shadow-sm"
             >
               <div className="flex items-center justify-between font-mono text-[10px] text-neutral-600 font-semibold mb-1">
@@ -251,6 +252,7 @@ export function AboutPage() {
             <p className="mb-3 font-script text-2xl text-neutral-700">Since when?</p>
             <motion.div
               whileHover={{ rotate: 0 }}
+              data-cursor-tip="making data talk! 📊"
               className="relative rotate-[-1deg] rounded-xl bg-[#fffdf7] p-5 shadow-sm"
             >
               <span className="absolute -top-2 right-4 h-5 w-2.5 rounded-full border-2 border-neutral-400" />

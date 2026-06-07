@@ -75,19 +75,26 @@ export function ExperiencePage() {
       </motion.div>
 
       <div className="mx-auto mt-16 max-w-4xl">
-        {EXPERIENCES.map((exp, i) => (
-          <motion.article
-            key={exp.org}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="grid grid-cols-1 gap-4 border-t border-dashed border-neutral-300 py-8 sm:grid-cols-[180px_1fr] sm:gap-10"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="origin-left"
+        {EXPERIENCES.map((exp, i) => {
+          const tips = [
+            "satellite image CNNs! 🛰️",
+            "SciBERT & NLP! 🤖",
+            "async APIs & SQL! ⚙️"
+          ]
+          return (
+            <motion.article
+              key={exp.org}
+              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              data-cursor-tip={tips[i]}
+              className="grid grid-cols-1 gap-4 border-t border-dashed border-neutral-300 py-8 sm:grid-cols-[180px_1fr] sm:gap-10"
             >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="origin-left"
+              >
               <p className="text-[11px] text-neutral-500">{exp.date}</p>
               <p className="mt-1 text-lg font-bold leading-tight">{exp.org}</p>
               <p className="text-[11px] text-neutral-500">{exp.role}</p>
@@ -118,7 +125,8 @@ export function ExperiencePage() {
               </ul>
             </div>
           </motion.article>
-        ))}
+          )
+        })}
       </div>
 
       <motion.p

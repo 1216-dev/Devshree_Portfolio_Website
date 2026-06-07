@@ -68,48 +68,57 @@ export function SkillsPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {GROUPS.map((g, groupIndex) => (
-            <motion.div
-              key={g.title}
-              initial={{ opacity: 0, y: 50, rotate: groupIndex % 2 === 0 ? -5 : 5 }}
-              whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: groupIndex * 0.1, duration: 0.5 }}
-              whileHover={{ scale: 1.02, zIndex: 10 }}
-              className="flex min-h-[260px] flex-col justify-between p-6"
-              style={{ backgroundColor: g.bg, color: g.fg }}
-            >
-              <motion.h3
-                initial={{ x: -20 }}
-                whileInView={{ x: 0 }}
+          {GROUPS.map((g, groupIndex) => {
+            const groupTips = [
+              "languages & git! 💻",
+              "neural nets & LLMs! 🧠",
+              "making data visual! 📊",
+              "scaling computations! ☁️"
+            ]
+            return (
+              <motion.div
+                key={g.title}
+                initial={{ opacity: 0, y: 50, rotate: groupIndex % 2 === 0 ? -5 : 5 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                 viewport={{ once: true }}
-                className="whitespace-pre-line font-display text-4xl leading-[0.9] tracking-tight sm:text-5xl"
-                style={{ color: g.fg }}
+                transition={{ delay: groupIndex * 0.1, duration: 0.5 }}
+                whileHover={{ scale: 1.02, zIndex: 10 }}
+                data-cursor-tip={groupTips[groupIndex]}
+                className="flex min-h-[260px] flex-col justify-between p-6"
+                style={{ backgroundColor: g.bg, color: g.fg }}
               >
-                {g.title}
-              </motion.h3>
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {g.items.map((item, i) => (
-                  <motion.li
-                    key={item}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 + groupIndex * 0.1 }}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      backgroundColor: g.accent,
-                      color: g.bg,
-                    }}
-                    className="border-2 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wide transition-colors"
-                    style={{ borderColor: g.accent, color: g.fg }}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                <motion.h3
+                  initial={{ x: -20 }}
+                  whileInView={{ x: 0 }}
+                  viewport={{ once: true }}
+                  className="whitespace-pre-line font-display text-4xl leading-[0.9] tracking-tight sm:text-5xl"
+                  style={{ color: g.fg }}
+                >
+                  {g.title}
+                </motion.h3>
+                <ul className="mt-6 flex flex-wrap gap-2">
+                  {g.items.map((item, i) => (
+                    <motion.li
+                      key={item}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.05 + groupIndex * 0.1 }}
+                      whileHover={{ 
+                        scale: 1.1, 
+                        backgroundColor: g.accent,
+                        color: g.bg,
+                      }}
+                      className="border-2 px-3 py-1 font-mono text-xs font-bold uppercase tracking-wide transition-colors"
+                      style={{ borderColor: g.accent, color: g.fg }}
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            )
+          })}
         </div>
 
         {/* footer slogan strip */}

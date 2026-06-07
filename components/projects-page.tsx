@@ -37,6 +37,7 @@ export function ProjectsPage() {
           <motion.figure
             style={{ y: y1, rotate: rotate1 }}
             whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+            data-cursor-tip="hackathon champion! 🏆"
             className="w-full max-w-2xl rounded-2xl bg-white p-4 shadow-2xl sm:w-[580px]"
           >
             <Image
@@ -48,7 +49,7 @@ export function ProjectsPage() {
             />
             <figcaption className="px-2 py-3">
               <p className="font-serif text-xl font-bold">
-                Hack Rare — Hackathon Winner
+                Hack Rare: Hackathon Winner
               </p>
               <p className="mt-1 text-sm text-neutral-600">
                 Built innovative solutions with an amazing team at a major hackathon event.
@@ -65,6 +66,7 @@ export function ProjectsPage() {
           <motion.figure
             style={{ y: y2, rotate: rotate2 }}
             whileHover={{ scale: 1.05, rotate: 0, zIndex: 10 }}
+            data-cursor-tip="teaching ML models! 🧠"
             className="w-full max-w-md rounded-2xl bg-white p-4 shadow-2xl sm:mt-16 sm:w-[420px]"
           >
             <Image
