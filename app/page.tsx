@@ -6,12 +6,14 @@ import { SkillsPage } from '@/components/skills-page'
 import { ContactPage } from '@/components/contact-page'
 import { ScrapbookNav } from '@/components/scrapbook-nav'
 import { ScrollShapes } from '@/components/scroll-shapes'
+import { SeedGarden } from '@/components/seed-garden'
 
 export default function Page() {
   return (
     <main className="relative">
       <ScrollShapes />
       <ScrapbookNav />
+      <SeedGarden />
       <section id="hero">
         <HeroPage />
       </section>
