@@ -104,38 +104,50 @@ const SoilIcon = () => (
 )
 
 const SproutIcon = () => (
-  <svg className="w-10 h-10 animate-pulse" viewBox="0 0 16 16" shapeRendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
-    {/* Black outline */}
-    <rect x="7" y="5" width="2" height="9" fill="#1b2e1a" />
-    <rect x="5" y="4" width="2" height="2" fill="#1b2e1a" />
-    <rect x="3" y="5" width="2" height="2" fill="#1b2e1a" />
-    <rect x="9" y="3" width="2" height="2" fill="#1b2e1a" />
-    <rect x="11" y="4" width="2" height="2" fill="#1b2e1a" />
-    
-    {/* Stem fill */}
-    <rect x="7" y="6" width="2" height="8" fill="#22c55e" />
-    
-    {/* Left Leaf fill */}
-    <rect x="5" y="5" width="2" height="1" fill="#15803d" />
-    <rect x="4" y="6" width="2" height="1" fill="#22c55e" />
-    <rect x="3" y="7" width="2" height="1" fill="#4ade80" />
-    
-    {/* Right Leaf fill */}
-    <rect x="9" y="4" width="2" height="1" fill="#16a34a" />
-    <rect x="10" y="5" width="2" height="1" fill="#22c55e" />
-    <rect x="11" y="6" width="2" height="1" fill="#86efac" />
+  <svg className="w-10 h-10 filter drop-shadow-md" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sproutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4ade80" />
+        <stop offset="100%" stopColor="#15803d" />
+      </linearGradient>
+      <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#22c55e" />
+        <stop offset="100%" stopColor="#14532d" />
+      </linearGradient>
+    </defs>
+    {/* Stem */}
+    <path d="M16 28V15C16 11 18 8 22 7" stroke="url(#stemGrad)" strokeWidth="3" strokeLinecap="round" />
+    <path d="M16 28V15C16 11 18 8 22 7" stroke="#166534" strokeWidth="1" strokeLinecap="round" />
+    {/* Left Leaf */}
+    <path d="M16 15C11 15 8 11 9 7C12 4 16 9 16 15Z" fill="url(#sproutGrad)" stroke="#14532d" strokeWidth="1.5" strokeLinejoin="round" />
+    {/* Right Leaf */}
+    <path d="M17 12C22 12 25 8 24 4C21 1 17 6 17 12Z" fill="url(#sproutGrad)" stroke="#14532d" strokeWidth="1.5" strokeLinejoin="round" />
+    {/* Little Highlight */}
+    <circle cx="12" cy="8" r="1.5" fill="#f0fdf4" opacity="0.6" />
+    <circle cx="21" cy="6" r="1.5" fill="#f0fdf4" opacity="0.6" />
   </svg>
 )
 
 const BudIcon = () => (
-  <svg className="w-8.5 h-10" viewBox="0 0 32 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-10 h-11 filter drop-shadow-md" viewBox="0 0 32 36" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="budGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#f472b6" />
+        <stop offset="60%" stopColor="#ec4899" />
+        <stop offset="100%" stopColor="#9d174d" />
+      </linearGradient>
+      <linearGradient id="stemBudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#16a34a" />
+        <stop offset="100%" stopColor="#14532d" />
+      </linearGradient>
+    </defs>
     {/* Stem */}
-    <path d="M16 34V16C16 12 18 10 20 8" stroke="#15803D" strokeWidth="3" strokeLinecap="round" />
+    <path d="M16 32V14C16 10 18 8 21 6" stroke="url(#stemBudGrad)" strokeWidth="3.5" strokeLinecap="round" />
     {/* Leaves */}
-    <path d="M16 24C11 24 9 20 10 17C12 14 16 18 16 24Z" fill="#166534" />
-    {/* Bud Head */}
-    <path d="M16 16C12 14 12 6 16 2C20 6 20 14 16 16Z" fill="#EC4899" stroke="#BE185D" strokeWidth="1.5" />
-    <path d="M16 16C14 14 14 10 16 6C18 10 18 14 16 16Z" fill="#F472B6" />
+    <path d="M16 22C10 22 8 18 9 14C12 11 16 15 16 22Z" fill="#15803d" stroke="#14532d" strokeWidth="1.5" />
+    {/* Bud Petal Head */}
+    <path d="M16 14C10 12 10 3 16 0C22 3 22 12 16 14Z" fill="url(#budGrad)" stroke="#9d174d" strokeWidth="2" strokeLinejoin="round" />
+    <path d="M16 14C13 12 13 8 16 4C19 8 19 12 16 14Z" fill="#fbcfe8" opacity="0.8" />
   </svg>
 )
 
@@ -143,51 +155,85 @@ const FlowerIcon = ({ type }: { type: FlowerType }) => {
   const getColors = () => {
     switch (type) {
       case 'rose':
-        return { petal: '#EF4444', center: '#B91C1C', petalLight: '#F87171' }
+        return { petal: 'url(#rosePetal)', center: '#7f1d1d', border: '#991b1b' }
       case 'sunflower':
-        return { petal: '#F59E0B', center: '#78350F', petalLight: '#FBBF24' }
+        return { petal: 'url(#sunflowerPetal)', center: '#451a03', border: '#b45309' }
       case 'violet':
-        return { petal: '#8B5CF6', center: '#4C1D95', petalLight: '#A78BFA' }
+        return { petal: 'url(#violetPetal)', center: '#2e1065', border: '#6d28d9' }
       case 'marigold':
       default:
-        return { petal: '#F97316', center: '#C2410C', petalLight: '#FB923C' }
+        return { petal: 'url(#marigoldPetal)', center: '#7c2d12', border: '#ea580c' }
     }
   }
   const colors = getColors()
 
   return (
-    <svg className="w-10 h-12" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Stem & Leaf */}
-      <path d="M20 46V22C20 17 22 15 24 13" stroke="#15803D" strokeWidth="3.5" strokeLinecap="round" />
-      <path d="M20 32C26 32 28 29 27 26C25 23 20 27 20 32Z" fill="#166534" />
+    <svg className="w-12 h-14 filter drop-shadow-md" viewBox="0 0 40 48" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="rosePetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#f87171" />
+          <stop offset="50%" stopColor="#ef4444" />
+          <stop offset="100%" stopColor="#b91c1c" />
+        </linearGradient>
+        <linearGradient id="sunflowerPetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#fbbf24" />
+          <stop offset="50%" stopColor="#f59e0b" />
+          <stop offset="100%" stopColor="#d97706" />
+        </linearGradient>
+        <linearGradient id="violetPetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#c084fc" />
+          <stop offset="50%" stopColor="#a855f7" />
+          <stop offset="100%" stopColor="#7e22ce" />
+        </linearGradient>
+        <linearGradient id="marigoldPetal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#fb923c" />
+          <stop offset="50%" stopColor="#f97316" />
+          <stop offset="100%" stopColor="#c2410c" />
+        </linearGradient>
+        <linearGradient id="stemFlowerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#22c55e" />
+          <stop offset="100%" stopColor="#14532d" />
+        </linearGradient>
+      </defs>
+      {/* Stem */}
+      <path d="M20 44V20C20 15 22 13 24 11" stroke="url(#stemFlowerGrad)" strokeWidth="4" strokeLinecap="round" />
+      <path d="M20 30C26 30 28 27 27 24C25 21 20 25 20 30Z" fill="#15803d" stroke="#14532d" strokeWidth="1.5" />
       
-      {/* Petals */}
-      <circle cx="20" cy="14" r="8" fill={colors.petal} />
-      <circle cx="13" cy="11" r="7" fill={colors.petalLight} />
-      <circle cx="27" cy="11" r="7" fill={colors.petalLight} />
-      <circle cx="13" cy="18" r="7" fill={colors.petalLight} />
-      <circle cx="27" cy="18" r="7" fill={colors.petalLight} />
-      <circle cx="20" cy="7" r="7" fill={colors.petalLight} />
+      {/* Petals (3D layered look) */}
+      <circle cx="20" cy="14" r="8" fill={colors.petal} stroke={colors.border} strokeWidth="1.5" />
+      <circle cx="13" cy="10" r="7.5" fill={colors.petal} stroke={colors.border} strokeWidth="1" />
+      <circle cx="27" cy="10" r="7.5" fill={colors.petal} stroke={colors.border} strokeWidth="1" />
+      <circle cx="13" cy="18" r="7.5" fill={colors.petal} stroke={colors.border} strokeWidth="1" />
+      <circle cx="27" cy="18" r="7.5" fill={colors.petal} stroke={colors.border} strokeWidth="1" />
+      <circle cx="20" cy="6" r="7.5" fill={colors.petal} stroke={colors.border} strokeWidth="1" />
       
-      {/* Center */}
+      {/* Center disk */}
       <circle cx="20" cy="14" r="5" fill={colors.center} />
+      {/* Highlight on center */}
+      <circle cx="18.5" cy="12.5" r="1.2" fill="#ffffff" opacity="0.5" />
     </svg>
   )
 }
 
 const WateringCanIcon = ({ animate }: { animate?: boolean }) => (
   <motion.svg
-    animate={animate ? { rotate: [-10, -35, -10], y: [0, -3, 0] } : {}}
-    transition={{ duration: 0.8, repeat: animate ? Infinity : 0 }}
-    className="w-12 h-12"
+    animate={animate ? { rotate: [-15, -40, -15], y: [0, -4, 0] } : {}}
+    transition={{ duration: 0.8, repeat: animate ? Infinity : 0, ease: "easeInOut" }}
+    className="w-12 h-12 filter drop-shadow-md"
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path d="M10 20H26L24 36H12L10 20Z" fill="#F97316" stroke="#C2410C" strokeWidth="2.5" />
-    <path d="M6 22C4 22 2 24 2 27C2 30 4 32 6 32H10" stroke="#C2410C" strokeWidth="2.5" strokeLinecap="round" />
-    <path d="M24 24L38 18V24" stroke="#F97316" strokeWidth="3" strokeLinecap="round" />
-    <path d="M38 16L42 12M42 12H44M42 12V14" stroke="#94A3B8" strokeWidth="2.5" strokeLinecap="round" />
+    <defs>
+      <linearGradient id="canGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#f97316" />
+        <stop offset="100%" stopColor="#c2410c" />
+      </linearGradient>
+    </defs>
+    <path d="M10 20H26L24 36H12L10 20Z" fill="url(#canGrad)" stroke="#7c2d12" strokeWidth="2.5" />
+    <path d="M6 22C4 22 2 24 2 27C2 30 4 32 6 32H10" stroke="#7c2d12" strokeWidth="2.5" strokeLinecap="round" />
+    <path d="M24 24L38 18V24" stroke="url(#canGrad)" strokeWidth="3.5" strokeLinecap="round" />
+    <path d="M38 16L42 12M42 12H44M42 12V14" stroke="#60a5fa" strokeWidth="3" strokeLinecap="round" />
   </motion.svg>
 )
 
@@ -509,8 +555,19 @@ export function SeedGarden() {
                   </div>
                 )}
 
-                {/* Show Stage Icon */}
-                <div className="relative">
+                {/* Show Stage Icon with swaying animation to look alive */}
+                <motion.div 
+                  className="relative"
+                  animate={{
+                    rotate: [-1.5, 1.5, -1.5],
+                    scale: [1, 1.03, 1]
+                  }}
+                  transition={{
+                    duration: 2.5 + (r % 3) * 0.5 + (c % 3) * 0.3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
                   {plant.stage === 'seed' && <div className="w-8 h-8 flex items-center justify-center"><div className="w-2.5 h-2.5 rounded-full bg-amber-800 animate-bounce" /></div>}
                   {plant.stage === 'sprout' && <SproutIcon />}
                   {plant.stage === 'bud' && <BudIcon />}
@@ -520,7 +577,7 @@ export function SeedGarden() {
                   {plant.wateredByMeToday && (
                     <span className="absolute -top-2 -right-2 bg-blue-500 text-white rounded-full p-0.5 text-[8px] animate-bounce">💧</span>
                   )}
-                </div>
+                </motion.div>
 
                 {/* Soil background mound */}
                 <div className="-mt-3 opacity-90">
@@ -698,6 +755,46 @@ export function SeedGarden() {
                 >
                   {renderGrid()}
                 </div>
+
+                {/* White Info Card Popup Overlay (Positioned inside board area matching screenshot) */}
+                <AnimatePresence>
+                  {showInfo && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                      animate={{ opacity: 1, scale: 1, x: 0 }}
+                      exit={{ opacity: 0, scale: 0.95, x: 20 }}
+                      className="absolute right-4 top-4 bottom-4 z-40 bg-white border-4 border-amber-950 p-6 rounded-sm text-amber-950 max-w-[280px] shadow-2xl flex flex-col font-mono text-[10px] leading-relaxed overflow-y-auto"
+                    >
+                      {/* Close button */}
+                      <button
+                        onClick={() => setShowInfo(false)}
+                        className="absolute top-2.5 right-2.5 text-amber-800 hover:text-amber-950 font-bold transition-colors text-sm"
+                      >
+                        ✕
+                      </button>
+
+                      {/* Header Sprout Icon */}
+                      <div className="mb-3">
+                        <SproutIcon />
+                      </div>
+
+                      {/* Guide texts */}
+                      <div className="space-y-3">
+                        <p>1. Plant yours: Drop a seed to start your sprout.</p>
+                        <p>2. Water another: Water any sprout on the canvas to help it bloom.</p>
+                        <p>3. Share to bloom: Share your link so others can water and bloom your sprout.</p>
+                        
+                        <div className="border-t-2 border-dashed border-amber-900/20 pt-2.5 mt-2">
+                          <h4 className="font-bold text-amber-800 mb-1">NOTE</h4>
+                          <ul className="list-disc list-inside space-y-1">
+                            <li>Every sprout is a surprise flower, you&apos;ll only know what it is once it grows!</li>
+                            <li>You can only plant one sprout and water up to two other sprouts a day.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Footer Panel Controls */}
@@ -757,54 +854,7 @@ export function SeedGarden() {
                 </div>
               </div>
 
-              {/* Information Drawer Overlay */}
-              <AnimatePresence>
-                {showInfo && (
-                  <motion.div
-                    initial={{ y: '100%' }}
-                    animate={{ y: 0 }}
-                    exit={{ y: '100%' }}
-                    className="absolute inset-x-0 bottom-0 bg-amber-950 text-amber-100 p-6 z-50 border-t-4 border-amber-950 flex flex-col gap-4 font-mono max-h-[80%]"
-                  >
-                    <div className="flex items-center justify-between border-b border-amber-800 pb-2">
-                      <h3 className="font-bold text-amber-300 uppercase tracking-widest text-sm flex items-center gap-2">
-                        <span>🌱</span> Garden Rules & Guide
-                      </h3>
-                      <button
-                        onClick={() => setShowInfo(false)}
-                        className="text-amber-400 hover:text-white"
-                      >
-                        <X className="w-4.5 h-4.5" />
-                      </button>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6 text-xs leading-relaxed">
-                      <div>
-                        <h4 className="font-bold text-amber-200 mb-2 border-b border-amber-900/60 pb-1">INSTRUCTIONS</h4>
-                        <ol className="list-decimal list-inside space-y-2">
-                          <li>
-                            <span className="font-bold text-amber-300">Plant yours:</span> Click any empty dirt spot on the grid to drop a seed. Share your idea with the world!
-                          </li>
-                          <li>
-                            <span className="font-bold text-amber-300">Water another:</span> Activate your daily watering can and click someone else&apos;s sprout to support their idea.
-                          </li>
-                          <li>
-                            <span className="font-bold text-amber-300">Share to bloom:</span> Copy the site link and share it so others can water and bloom your sprout.
-                          </li>
-                        </ol>
-                      </div>
-
-                      <div>
-                        <h4 className="font-bold text-amber-200 mb-2 border-b border-amber-900/60 pb-1">NOTE</h4>
-                        <ul className="list-disc list-inside space-y-2">
-                          <li>Every sprout is a surprise flower; it will evolve dynamically as it accumulates water drops. You will only find out what it is once it fully blooms!</li>
-                          <li>To keep the garden fair and healthy, you can only plant one sprout and water up to two other sprouts a day.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Bottom bar rules overlay deleted because it is now inside the grid overlay popup */}
 
               {/* Seed Planter Dialog Form Overlay */}
               <AnimatePresence>
