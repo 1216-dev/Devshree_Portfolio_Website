@@ -73,32 +73,33 @@ export function CustomCursor() {
       className="pointer-events-none fixed z-[99999] hidden md:block"
     >
       {/* Sketched Cartoon Gaming Hand Pointer */}
+      {/* Sketched Cartoon Paper Airplane Cursor */}
       <svg
-        width="32"
-        height="32"
+        width="36"
+        height="36"
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="filter drop-shadow-md select-none"
+        className="filter drop-shadow-md select-none rotate-[-15deg]"
       >
-        {/* Hand Shadow */}
+        {/* Shadow */}
         <path
-          d="M10 6 L14 2 L18 6 L18 10 H22 L24 12 L24 16 L20 20 H14 L10 16 Z"
+          d="M2 2 L26 12 L16 16 L12 26 Z"
           fill="#1A1614"
           opacity="0.15"
           transform="translate(2, 2)"
         />
-        {/* Glove fill */}
+        {/* Paper Airplane Body */}
         <path
-          d="M10 6 L14 2 L18 6 L18 10 H22 L24 12 L24 16 L20 20 H14 L10 16 Z"
-          fill="#F97316"
+          d="M2 2 L26 12 L16 16 L12 26 Z"
+          fill="#FFFFFF"
           stroke="#1A1614"
           strokeWidth="2.5"
           strokeLinejoin="round"
         />
-        {/* Inner highlights */}
-        <path d="M13 5 L15 3" stroke="#FFEDD5" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="16" cy="14" r="1.5" fill="#FFFFFF" />
+        {/* Fold lines */}
+        <path d="M2 2 L16 16" stroke="#1A1614" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 26 L14 18 L16 16 M26 12 L18 14 L16 16" stroke="#1A1614" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
 
       {/* Floating handwritten speech bubble */}
