@@ -85,21 +85,45 @@ interface SeedIdea {
 
 // Custom vector illustrations for the garden
 const SoilIcon = () => (
-  <svg className="w-12 h-6" viewBox="0 0 48 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 20C12 14 36 14 44 20C46 21.5 44 23 42 23H6C4 23 2 21.5 4 20Z" fill="#78350F" />
-    <path d="M8 19C14 15 34 15 40 19" stroke="#92400E" strokeWidth="2" strokeLinecap="round" />
-    <path d="M12 21C16 18 32 18 36 21" stroke="#5C2D0C" strokeWidth="1.5" strokeLinecap="round" />
+  <svg className="w-14 h-7" viewBox="0 0 24 12" shapeRendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+    {/* Outline */}
+    <path d="M 6 4 h 12 v 1 h 2 v 1 h 2 v 1 h 2 v 4 h -22 v -4 h 2 v -1 h 2 v -1 z" fill="#3b2314" />
+    {/* Core Soil */}
+    <path d="M 7 5 h 10 v 1 h 2 v 1 h 2 v 4 h -18 v -4 h 2 v -1 z" fill="#78350F" />
+    {/* Texture details */}
+    <rect x="8" y="7" width="2" height="1" fill="#451a03" />
+    <rect x="14" y="6" width="3" height="1" fill="#451a03" />
+    <rect x="12" y="9" width="4" height="1" fill="#451a03" />
+    <rect x="6" y="9" width="2" height="1" fill="#451a03" />
+    
+    {/* Highlights */}
+    <rect x="9" y="5" width="3" height="1" fill="#b45309" />
+    <rect x="13" y="7" width="2" height="1" fill="#b45309" />
+    <rect x="17" y="8" width="2" height="1" fill="#b45309" />
   </svg>
 )
 
 const SproutIcon = () => (
-  <svg className="w-8 h-8 animate-pulse" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Stem */}
-    <path d="M16 30V18C16 14 19 12 22 11" stroke="#22C55E" strokeWidth="2.5" strokeLinecap="round" />
-    {/* Left Leaf */}
-    <path d="M16 18C12 18 10 14 11 11C13 8 16 12 16 18Z" fill="#15803D" stroke="#166534" strokeWidth="1" />
-    {/* Right Leaf */}
-    <path d="M18 15C22 15 24 11 23 8C21 5 18 9 18 15Z" fill="#22C55E" stroke="#15803D" strokeWidth="1" />
+  <svg className="w-10 h-10 animate-pulse" viewBox="0 0 16 16" shapeRendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+    {/* Black outline */}
+    <rect x="7" y="5" width="2" height="9" fill="#1b2e1a" />
+    <rect x="5" y="4" width="2" height="2" fill="#1b2e1a" />
+    <rect x="3" y="5" width="2" height="2" fill="#1b2e1a" />
+    <rect x="9" y="3" width="2" height="2" fill="#1b2e1a" />
+    <rect x="11" y="4" width="2" height="2" fill="#1b2e1a" />
+    
+    {/* Stem fill */}
+    <rect x="7" y="6" width="2" height="8" fill="#22c55e" />
+    
+    {/* Left Leaf fill */}
+    <rect x="5" y="5" width="2" height="1" fill="#15803d" />
+    <rect x="4" y="6" width="2" height="1" fill="#22c55e" />
+    <rect x="3" y="7" width="2" height="1" fill="#4ade80" />
+    
+    {/* Right Leaf fill */}
+    <rect x="9" y="4" width="2" height="1" fill="#16a34a" />
+    <rect x="10" y="5" width="2" height="1" fill="#22c55e" />
+    <rect x="11" y="6" width="2" height="1" fill="#86efac" />
   </svg>
 )
 
